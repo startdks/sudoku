@@ -55,7 +55,7 @@ class Sudoku {
               .has(button_value)) ||
           button_value === ""
         ) {
-          alert("Fail");
+          document.getElementById("solved").innerHTML = "Fail";
           return false;
         }
         if (!rowSet.has(r)) {
@@ -75,9 +75,7 @@ class Sudoku {
         rcSet.get(rcKey).add(button_value);
       }
     }
-    alert(
-      "Solved with time of " + document.getElementById("timer").textContent
-    );
+    document.getElementById("solved").innerHTML = "Solved : " + document.getElementById("timer").textContent;
     return true;
   }
 
@@ -192,7 +190,9 @@ function handleClick(button) {
   }
 }
 
+
 setInterval(myTimer, 1000);
+
 
 var ss = 0;
 function myTimer() {
