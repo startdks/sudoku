@@ -41,7 +41,7 @@ class Sudoku {
     let rowSet = new Map(this.rowSet);
     let colSet = new Map(this.colSet);
     let rcSet = new Map(this.rcSet);
-
+    let num_set = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9"]);
     for (let r = 0; r < 9; r++) {
       for (let c = 0; c < 9; c++) {
         const button = document.getElementById(`text-${r}-${c}`);
@@ -53,7 +53,8 @@ class Sudoku {
             rcSet
               .get(`${Math.floor(r / 3)}-${Math.floor(c / 3)}`)
               .has(button_value)) ||
-          button_value === ""
+          button_value === "" ||
+          !num_set.has(button_value)
         ) {
           document.getElementById("solved").innerHTML = "Fail";
           return false;
@@ -75,7 +76,8 @@ class Sudoku {
         rcSet.get(rcKey).add(button_value);
       }
     }
-    document.getElementById("solved").innerHTML = "Solved : " + document.getElementById("timer").textContent;
+    document.getElementById("solved").innerHTML =
+      "Solved : " + document.getElementById("timer").textContent;
     return true;
   }
 
@@ -139,7 +141,7 @@ class Sudoku {
   }
 
   show() {
-    while (this.ready.size !== 60) {
+    while (this.ready.size !== 80) {
       let r = Math.floor(Math.random() * 9);
       let c = Math.floor(Math.random() * 9);
       const buttonId = `text-${r}-${c}`;
@@ -190,9 +192,7 @@ function handleClick(button) {
   }
 }
 
-
 setInterval(myTimer, 1000);
-
 
 var ss = 0;
 function myTimer() {
