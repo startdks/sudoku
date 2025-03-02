@@ -4,6 +4,13 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
+  margin: 0;
+  font-family: Arial, sans-serif; 
+}
+
+.container {
+  text-align: center;
+  width: 100%; 
 }
 
 input[type="text"] {
@@ -11,25 +18,37 @@ input[type="text"] {
   height: 50px;
   font-size: 30px;
   text-align: center;
+  margin: -1.5px;
 }
+
 
 button {
   width: 150px;
   height: 30px;
   font-size: 15px;
   text-align: center;
+  margin: 10px;
 }
 
-table {
+/* Wrapper for centering the first table */
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.first-table {
   border-collapse: collapse;
-  width: 300px;
-  margin: auto;
+  width: 100%;
+  max-width: 300px; 
+  margin: 0 auto; 
 }
 
 .first-table td:nth-child(3),
 .first-table td:nth-child(6) {
   border-right: 5px solid #000;
 }
+
 .first-table td:nth-child(4),
 .first-table td:nth-child(7) {
   border-left: 5px solid #000;
@@ -48,6 +67,7 @@ table {
 .first-table td:nth-child(9) {
   border-right: 5px solid #000;
 }
+
 .first-table td:nth-child(1) {
   border-left: 5px solid #000;
 }
@@ -61,11 +81,11 @@ table {
 }
 
 .second-table {
-  width: 30px;
-  height: 30px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
   padding: 10px;
-  text-align: center;
-  font-size: 50px;
+  overflow: auto; 
 }
 
 .second-table td {
@@ -86,4 +106,67 @@ h1 {
 
 #solved {
   color: red;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  input[type="text"] {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  button {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .first-table td,
+  .first-table input[type="text"] {
+    padding: 2px;
+  }
+
+  .second-table {
+    width: 100%;
+    max-width: none;
+    font-size: 20px;
+  }
+
+  input[type="button"] {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  input[type="text"] {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  button {
+    width: 100px;
+    height: 35px;
+    font-size: 12px;
+  }
+  .first-table {
+    max-width: 100%;
+    width: auto; 
+  }
+  .second-table {
+    display: none;
+  }
+
+  input[type="button"] {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
 }
