@@ -28,6 +28,8 @@ button {
   font-size: 15px;
   text-align: center;
   margin: 10px;
+  display: inline-block; 
+  vertical-align: middle; 
 }
 
 /* Wrapper for centering the first table */
@@ -117,6 +119,7 @@ h1 {
   }
 
   button {
+    border-radius: 0;
     width: 120px;
     height: 40px;
     font-size: 14px;
@@ -151,6 +154,7 @@ h1 {
     width: 100px;
     height: 35px;
     font-size: 12px;
+    border-radius: 0;
   }
   .first-table {
     max-width: 100%;
@@ -164,9 +168,5 @@ h1 {
     width: 30px;
     height: 30px;
     font-size: 18px;
-  }
-
-  h1 {
-    font-size: 20px;
   }
 }
